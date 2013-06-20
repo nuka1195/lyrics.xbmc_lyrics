@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="lyrics.xbmc_lyrics" name="XBMC Lyrics" version="2.2.0" provider-name="nuka1195">
+    <requires>
+        <import addon="xbmc.addon" version="12.0.0"/>
+        <import addon="xbmc.python" version="2.1.0"/>
+    </requires>
+    <extension point="xbmc.python.lyrics" library="addon.py"/>
+    <extension point="xbmc.addon.metadata">
+        <broken>requires patches to XBMC</broken>
+        <platform>all</platform>
+        <nochangelog>true</nochangelog>
+        <nofanart>true</nofanart>
+        <noicon>false</noicon>
+        <license>Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</license>
+        <website></website>
+        <source>https://github.com/nuka1195/lyrics.xbmc_lyrics.git</source>
+        <forum></forum>
+        <email></email>    
+        <summary lang="en">Find and display song lyrics including LRC (simple format).</summary>
+        <description lang="en">Find and display song lyrics from the Internet. Uses embedded lyrics if available. Ability to play and tag LRC (simple format) lyrics. Can be set to auto-scroll non LRC lyrics.[CR][CR]Primary and fall-back scrapers. Artist's song lists if no song match was found. Artist aliases if no artist match was found.[CR][CR]Can run as a stand alone script (GUI mode) or in the background.[CR][CR]*See readme.txt for a full description (can be viewed from settings).</description>
+        <disclaimer lang="en">This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License *see license.txt</disclaimer>
+    </extension>
+</addon>

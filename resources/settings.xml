@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<settings>
+
+	<!-- General -->
+	<category label="30051" id="category_general">
+		<setting label="30100" type="lsep"/>
+		<setting label="30110" type="slider" option="int" id="fetch_lyrics_delay" default="300" range="100,10,1000" format="%1.f $ADDON[$ID 30111]"/>
+		<setting label="30120" type="bool" id="prefetch_lyrics" default="true"/>
+		<setting label="30101" type="lsep"/>
+		<setting label="30130" type="bool" id="enable_karaoke_mode" default="true"/>
+		<setting label="30140" subsetting="true" type="bool" id="autoscroll_lyrics" default="true" enable="SubString(Addon.Setting(enable_karaoke_mode),true,left)"/>
+		<setting label="30150" subsetting="true" type="slider" option="int" id="autoscroll_lyrics_delay" default="5" range="0,1,20" format="%1.f $ADDON[$ID 30151],$ADDON[$ID 30152]" enable="SubString(Addon.Setting(enable_karaoke_mode),true,left) + SubString(Addon.Setting(autoscroll_lyrics),true,left)"/>
+		<setting label="30102" type="lsep"/>
+		<setting label="30160" type="labelenum" id="song_filename_template" default="%A/%B/[%N - ][%A - ]%T" values="[%N - ]%A - %T|%A/%B/[%N - ][%A - ]%T"/>
+	</category>
+
+	<!-- Scrapers -->
+	<category label="30052" id="category_scrapers">
+		<setting label="30200" type="lsep"/>
+		<setting label="30210" type="fileenum" id="scraper_1" default="LyricWiki-Gracenote" mask=".xpr" option="hideext" values="$CWD/resources/scrapers/"/>
+		<setting label="30211" type="fileenum" id="scraper_2" default="TuneWiki" mask=".xpr" option="hideext|empty" values="$CWD/resources/scrapers/"/>
+		<setting label="30212" type="fileenum" id="scraper_3" default="LyricsMode" mask=".xpr" option="hideext|empty" values="$CWD/resources/scrapers/" visible="!IsEmpty(Addon.Setting(scraper_2))"/>
+		<setting label="30213" type="fileenum" id="scraper_4" default="LyricsTime" mask=".xpr" option="hideext|empty" values="$CWD/resources/scrapers/" visible="![IsEmpty(Addon.Setting(scraper_2)) | IsEmpty(Addon.Setting(scraper_3))]"/>
+		<setting label="30214" type="fileenum" id="scraper_5" default="LyrDB" mask=".xpr" option="hideext|empty" values="$CWD/resources/scrapers/" visible="![IsEmpty(Addon.Setting(scraper_2)) | IsEmpty(Addon.Setting(scraper_3)) | IsEmpty(Addon.Setting(scraper_4))]"/>
+	</category>
+
+	<!-- Lyrics -->
+	<category label="30053" id="category_lyrics">
+		<setting type="lsep" label="30300"/>
+		<setting id="lyrics_save_mode" type="enum" label="30310" default="1" lvalues="30311|30312|30313"/>
+		<setting id="lyrics_save_path" type="folder" label="30320" subsetting="true" default="$PROFILE/lyrics" source="auto" option="writeable" visible="StringCompare(Addon.Setting(lyrics_save_mode),0)"/>
+		<setting id="lyrics_subfolder_template" type="labelenum" label="30330" subsetting="true" default="%A/%B/" values="%A/|%A/%B/" visible="!IntegerGreaterThan(Addon.Setting(lyrics_save_mode),0)"/>
+		<setting id="lyrics_subfolder" type="edit" label="30340" subsetting="true" default="Lyrics" visible="IntegerGreaterThan(Addon.Setting(lyrics_save_mode),0)"/>
+		<setting id="lyrics_save_extension" type="edit" label="30350" subsetting="true" default=".lyrics"/>
+		<setting type="lsep" label="30301" enable="SubString(Addon.Setting(enable_karaoke_mode),true,left) + !SubString(Addon.Setting(autoscroll_lyrics),true,left)"/>
+		<setting id="lyrics_allow_tagging" type="bool" label="30360" default="true" enable="SubString(Addon.Setting(enable_karaoke_mode),true,left) + !SubString(Addon.Setting(autoscroll_lyrics),true,left)"/>
+		<setting id="lyrics_tagging_offset" type="slider" label="30370" subsetting="true" default="-250" option="int" range="-500,10,500" format="%1.f $ADDON[$ID 30371]" enable="SubString(Addon.Setting(enable_karaoke_mode),true,left) + !SubString(Addon.Setting(autoscroll_lyrics),true,left) + SubString(Addon.Setting(lyrics_allow_tagging),true,left)"/>
+	</category>
+
+	<!-- Maintenance -->
+	<category label="30056" id="category_maintenance">
+		<setting type="sep"/>
+		<setting label="[B]$ADDON[$ID 30750][/B]" type="text" default="$AUTHOR" enable="false"/>
+		<setting label="[B]$ADDON[$ID 30752][/B]" type="text" id="repo" default="http://xbmc-addons.googlecode.com/" enable="false"/>
+		<setting label="[B]$ADDON[$ID 30753][/B]" type="text" id="branch" default="svn/addons/" visible="false"/>
+		<setting label="[B]$ADDON[$ID 30754][/B]" type="text" default="$ADDON[$ID 30010]" enable="false"/>
+		<setting label="[B]$ADDON[$ID 30755][/B]" type="text" default="VelvetKevorkian" enable="false"/>
+		<setting type="sep"/>
+		<setting label="30600" type="lsep"/>
+		<setting label="30610" type="action" action="RunScript($ID,view=changelog)" visible="System.HasAddon(script.module.pysvn)"/>
+		<setting label="30615" type="action" action="RunScript($ID,view=readme)"/>
+		<setting label="30620" type="action" action="RunScript($ID,view=license)"/>
+		<setting label="30625" type="action" action="RunScript($ID,view=properties)"/>
+		<setting label="30601" type="lsep"/>
+		<setting label="30650" type="action" action="RunScript($ID,task=check_for_updates)"/>
+		<setting label="30655" type="action" action="RunScript($ID,task=clear_artist_aliases)"/>
+		<setting label="30660" type="action" action="RunScript($ID,task=scraper_editor)" option="close"/>
+	</category>
+
+    <!-- Settings used by addon, no user input -->
+    <category visible="false" id="category_internal">
+		<setting type="text" id="editor_scraper" default="Defaults"/>
+	</category>
+
+</settings>

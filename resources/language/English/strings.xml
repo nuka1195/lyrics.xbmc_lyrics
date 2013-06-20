@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<strings>
+
+	<!-- addon localized title -->
+	<string id="30000">XBMC Lyrics</string>
+	<!-- do NOT localize {addon} -->
+	<string id="30001">{addon} Package Manager</string>
+	<string id="30002">XBMC Lyrics Scraper Editor</string>
+	<!-- language author (translators put your name here) -->
+	<string id="30010">nuka1195</string>
+
+	<!-- category button titles -->
+	<string id="30051">General</string>
+	<string id="30052">Scrapers</string>
+	<string id="30053">Lyrics</string>
+	<string id="30054"></string>
+	<string id="30055">Skinning</string>
+	<string id="30056">Maintenance</string>
+
+	<!-- General -->
+	<string id="30100">Fetching</string>
+	<string id="30101">Playback</string>
+	<string id="30102">Music</string>
+	<!-- settings labels & options -->
+	<string id="30110">Delay fetching lyrics</string>
+	<string id="30111">msec</string>
+	<string id="30120">Prefetch next song&apos;s lyrics</string>
+	<string id="30130">Enable karaoke mode</string>
+	<string id="30140">Autoscroll non LRC tagged lyrics</string>
+	<string id="30150">Delay scrolling lyrics</string>
+	<string id="30151">sec</string>
+	<string id="30152">None</string>
+	<string id="30160">Song filename template</string>
+	<string id="30161">[I](Used to parse artist/album/title for missing tags)[/I]</string>
+
+	<!-- Scrapers -->
+	<string id="30200">Order</string>
+	<!-- settings labels & options -->
+	<string id="30210">Primary scraper</string>
+	<string id="30211">Second scraper</string>
+	<string id="30212">Third scraper</string>
+	<string id="30213">Fourth scraper</string>
+	<string id="30214">Fifth scraper</string>
+
+	<!-- Lyrics -->
+	<string id="30300">Cache</string>
+	<string id="30301">Tagging</string>
+	<!-- settings labels & options -->
+	<string id="30310">Save lyrics to</string>
+	<string id="30311">Shared folder</string>
+	<string id="30312">Song&apos;s folder</string>
+	<string id="30313">Artist&apos;s folder</string>
+	<string id="30320">Folder</string>
+	<string id="30330">Subfolder template</string>
+	<string id="30340">Subfolder</string>
+	<string id="30350">Extension</string>
+	<string id="30360">Enable LRC (simple format) tagging</string>
+	<string id="30370">Tagging offset</string>
+	<string id="30371">msec</string>
+
+	<!-- Maintenance -->
+	<string id="30600">Information</string>
+	<string id="30601">Tasks</string>
+	<!-- settings labels & options -->
+	<string id="30610">View changelog</string>
+	<string id="30615">View readme</string>
+	<string id="30620">View license</string>
+	<string id="30625">View properties</string>
+	<string id="30650">Check for updates</string>
+	<string id="30655">Clear artist aliases</string>
+	<string id="30660">Scraper Editor</string>
+
+	<!-- universal strings -->
+	<!-- compatible messages -->
+	<!-- do NOT localize {version} {msg} {file} {addon} {view} -->
+	<string id="30700">You&apos;re currently running version {version}.</string>
+	<string id="30701">Your version is up to date.</string>
+	<string id="30702">An updated version {version} is available.</string>
+	<!-- messages -->
+	<string id="30710">Downloading: {msg}</string>
+	<string id="30711">Saving: {msg}</string>
+	<string id="30712">To: {msg}</string>
+	<string id="30713">Copying: {msg}</string>
+	<string id="30714">Extracting: {msg}</string>
+	<string id="30715">B</string>
+	<string id="30716">KB</string>
+	<string id="30717">MB</string>
+	<string id="30718">of</string>
+	<string id="30719">at</string>
+	<string id="30720">ETA</string>
+	<string id="30721">min</string>
+	<string id="30722">B/s</string>
+	<string id="30723">KB/s</string>
+	<string id="30724">MB/s</string>
+	<!-- search terms -->
+	<string id="30730">Search</string>
+	<string id="30731">Enter keywords/phrase to search for...</string>
+	<string id="30735">Browse for install path</string>
+	<string id="30736">Reset controls to previous values?</string>
+	<string id="30737">Reset controls to default values?</string>
+	<!-- button labels -->
+	<string id="30740">Reset</string>
+	<string id="30741">Previous</string>
+	<string id="30742">Default</string>
+	<string id="30745">Open</string>
+	<string id="30746">Save</string>
+	<!-- credits titles -->
+	<string id="30750">Author</string>
+	<string id="30751">Version</string>
+	<string id="30752">Repository</string>
+	<string id="30753">Branch</string>
+	<string id="30754">Language Translation</string>
+	<string id="30755">Icon by</string>
+	<string id="30759">Updated</string>
+	<!-- viewer messages -->
+	<string id="30760">Checking for updates, please wait...</string>
+	<string id="30761">Fetching changelog, please wait...</string>
+	<string id="30762">Fetching readme, please wait...</string>
+	<string id="30763">Fetching license, please wait...</string>
+	<string id="30764">Fetching window properties, please wait...</string>
+	<string id="30765">Updates</string>
+	<string id="30766">Changelog</string>
+	<string id="30767">Readme</string>
+	<string id="30768">License</string>
+	<string id="30769">Properties</string>
+	<string id="30770">An error occurred checking for updates!</string>
+	<string id="30771">An error occurred fetching {view}!</string>
+    <!-- package manager messages -->
+	<string id="30780">{package} successfully installed.</string>
+	<string id="30781">An error occurred extracting &quot;{file}&quot;</string>
+	<string id="30782">An error occurred downloading &quot;{file}&quot;</string>
+	<string id="30783">An error occurred saving &quot;{file}&quot;</string>
+	<string id="30784">Installing &quot;{addon}&quot; cancelled!</string>
+	<string id="30788">Failed install</string>
+	<string id="30789">Installed</string>
+	<!-- miscellaneous strings -->
+	<string id="30799">Unknown</string>
+
+	<!-- user messages -->
+	<!-- Do NOT localize {title} {artist} {msg} -->
+	<string id="30800">Fetching lyrics for &quot;{title}&quot;...</string>
+	<string id="30805">Prefetching lyrics for &quot;{title}&quot;...</string>
+	<string id="30810">Alias for &quot;{artist}&quot;</string>
+	<string id="30820">prefetched</string>
+	<string id="30830">Artist aliases cleared!</string>
+	<string id="30840">Would you like to save the tagged lyrics?</string>
+	<string id="30841">For &quot;{title}&quot;</string>
+	<string id="30845">Are you sure you want to clear artist aliases?</string>
+	<!-- error message -->
+	<string id="30850">Could not determine artist or title!</string>
+	<string id="30851">Fetching lyrics failed![CR]{msg}</string>
+	<string id="30852">Error saving lyrics![CR]{msg}</string>
+	<!-- success message -->
+	<string id="30860">Fetched lyrics from internet</string>
+	<string id="30861">Used embedded lyrics</string>
+	<string id="30862">Used cached lyrics</string>
+	<string id="30863">Saved tagged lyrics</string>
+
+	<!-- scraper editor strings -->
+	<string id="30900">Reset Scraper Values</string>
+	<string id="30901">Choose Scraper</string>
+	<!-- category buttons -->
+	<string id="30905">Maintainer</string>
+	<string id="30906">Search</string>
+	<string id="30907">Scraping</string>
+	<string id="30908">Lyrics</string>
+
+	<!-- dialog buttons -->
+	<string id="30910">Contact Info</string>
+	<string id="30911">Name</string>
+	<string id="30912">Username</string>
+	<string id="30913">Email</string>
+	<string id="30914">Date</string>
+
+	<string id="30920">General</string>
+	<string id="30921">Title</string>
+	<string id="30922">Base url</string>
+	<string id="30923">User-agent</string>
+	<string id="30924">Enter User-agent string</string>
+
+	<string id="30930">Url Params</string>
+	<string id="30931">Group by</string>
+	<string id="30932">Join artist and title with</string>
+	<string id="30933">Replace spaces with</string>
+	<string id="30934">Special escape characters</string>
+	<string id="30935">Strip all text inside () and [] and normalize artist/title</string>
+	<string id="30936">Convert case of params</string>
+	<string id="30937">Special search param</string>
+	<string id="30938">Urlencode search string</string>
+
+	<string id="30940">Artist</string>
+	<string id="30941">Search heading</string>
+	<string id="30942">Search tail</string>
+
+	<string id="30950">Song Title</string>
+
+	<string id="30960">Source</string>
+	<string id="30961">Encoding</string>
+	<string id="30962">Compression method</string>
+
+	<string id="30970">Lyrics</string>
+	<string id="30971">LRC lyrics</string>
+	<string id="30972">Clean lyrics after scraping</string>
+	<string id="30973">Regex</string>
+	<string id="30974">Flags</string>
+	<string id="30975">Invalid regex</string>
+
+	<string id="30980">Artist Song List</string>
+	<string id="30981">Format of song list</string>
+	<string id="30982">Site always returns a song list</string>
+	<string id="30983">Automatically select a match</string>
+
+	<string id="30990">Other</string>
+	<string id="30991">None</string>
+	<string id="30992">Auto</string>
+
+</strings>

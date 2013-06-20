@@ -1,0 +1,739 @@
+<window>
+	<!-- make these work so diffuse category buttons work -->
+	<variable name="categorybuttontexture300">
+		<value condition="StringCompare(Window.Property(Category),300)">button-focus.png</value>
+		<value>button-nofocus.png</value>
+	</variable>
+	<variable name="categorybuttondiffuse300">
+		<value condition="StringCompare(Window.Property(Category),300)">60FFFFFF</value>
+		<value>FFFFFFFF</value>
+	</variable>
+
+	<defaultcontrol always="true">9</defaultcontrol>
+	<coordinates>
+		<system>1</system>
+		<posx>240</posx>
+		<posy>60</posy>
+	</coordinates>
+	<include>dialogeffect</include>
+
+	<controls>
+		<control type="image">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>800</width>
+			<height>600</height>
+			<texture border="40">DialogBack.png</texture>
+			<visible>![Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)]</visible>
+		</control>
+		<control type="image">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>800</width>
+			<height>600</height>
+			<texture border="40">DialogBack2.png</texture>
+			<visible>Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)</visible>
+		</control>
+		<control type="image">
+			<description>Dialog Header image</description>
+			<posx>40</posx>
+			<posy>16</posy>
+			<width>720</width>
+			<height>40</height>
+			<texture>dialogheader.png</texture>
+		</control>
+		<control type="label">
+			<description>header label</description>
+			<posx>40</posx>
+			<posy>20</posy>
+			<width>720</width>
+			<height>30</height>
+			<font>font13_title</font>
+			<label>$ADDON[lyrics.xbmc.lyrics 30002]$INFO[Window.Property(Title), - (,)]</label>
+			<align>center</align>
+			<aligny>center</aligny>
+			<textcolor>selected</textcolor>
+			<shadowcolor>black</shadowcolor>
+		</control>
+		<control type="button">
+			<description>Close Window button</description>
+			<posx>710</posx>
+			<posy>15</posy>
+			<width>64</width>
+			<height>32</height>
+			<label>-</label>
+			<font>-</font>
+			<onclick>PreviousMenu</onclick>
+			<texturefocus>DialogCloseButton-focus.png</texturefocus>
+			<texturenofocus>DialogCloseButton.png</texturenofocus>
+			<onleft>9</onleft>
+			<onright>9</onright>
+			<onup>9</onup>
+			<ondown>9</ondown>
+			<visible>system.getbool(input.enablemouse)</visible>
+		</control>
+
+
+		<control type="grouplist" id="9">
+			<description>button area</description>
+			<posx>45</posx>
+			<posy>70</posy>
+			<width>710</width>
+			<height>40</height>
+			<itemgap>5</itemgap>
+			<align>center</align>
+			<orientation>horizontal</orientation>
+			<onleft>9</onleft>
+			<onright>9</onright>
+			<onup>9001</onup>
+			<ondown>400</ondown>
+			<control type="togglebutton" id="300">
+				<description>Maintainer Button</description>
+				<height>40</height>
+				<width>173</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font12_title</font>
+				<label>$ADDON[lyrics.xbmc.lyrics 30905]</label>
+				<textcolor>white</textcolor>
+				<texturefocus>button-focus.png</texturefocus>
+				<texturenofocus>button-nofocus.png</texturenofocus>
+				<alttexturefocus>button-focus.png</alttexturefocus>
+				<alttexturenofocus>button-focus.png</alttexturenofocus>
+				<usealttexture>StringCompare(Window.Property(Category),300)</usealttexture>
+				<pulseonselect>false</pulseonselect>
+				<onfocus>SetProperty(Category,300)</onfocus>
+                <animation effect="fade" start="100" end="60" time="0" condition="StringCompare(Window.Property(Category),300) + !Control.HasFocus(300)">Conditional</animation>
+			</control>
+			<control type="togglebutton" id="301">
+				<description>Search Button</description>
+				<height>40</height>
+				<width>173</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font12_title</font>
+				<label>$ADDON[lyrics.xbmc.lyrics 30906]</label>
+				<textcolor>white</textcolor>
+				<texturefocus>button-focus.png</texturefocus>
+				<texturenofocus>button-nofocus.png</texturenofocus>
+				<alttexturefocus>button-focus.png</alttexturefocus>
+				<alttexturenofocus>button-focus.png</alttexturenofocus>
+				<usealttexture>StringCompare(Window.Property(Category),301)</usealttexture>
+				<pulseonselect>false</pulseonselect>
+				<onfocus>SetProperty(Category,301)</onfocus>
+                <animation effect="fade" start="100" end="60" time="0" condition="StringCompare(Window.Property(Category),301) + !Control.HasFocus(301)">Conditional</animation>
+			</control>
+			<control type="togglebutton" id="302">
+				<description>Scraping Button</description>
+				<height>40</height>
+				<width>173</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font12_title</font>
+				<label>$ADDON[lyrics.xbmc.lyrics 30907]</label>
+				<textcolor>white</textcolor>
+				<texturefocus>button-focus.png</texturefocus>
+				<texturenofocus>button-nofocus.png</texturenofocus>
+				<alttexturefocus>button-focus.png</alttexturefocus>
+				<alttexturenofocus>button-focus.png</alttexturenofocus>
+				<usealttexture>StringCompare(Window.Property(Category),302)</usealttexture>
+				<pulseonselect>false</pulseonselect>
+				<onfocus>SetProperty(Category,302)</onfocus>
+                <animation effect="fade" start="100" end="60" time="0" condition="StringCompare(Window.Property(Category),302) + !Control.HasFocus(302)">Conditional</animation>
+			</control>
+		</control>
+
+		
+		<control type="image">
+			<description>Has Previous</description>
+			<posx>25</posx>
+			<posy>80</posy>
+			<width>20</width>
+			<height>20</height>
+			<texture>scroll-left-focus.png</texture>
+			<visible>Container(9).HasPrevious</visible>
+		</control>
+		<control type="image">
+			<description>Has Next</description>
+			<posx>755</posx>
+			<posy>80</posy>
+			<width>20</width>
+			<height>20</height>
+			<texture>scroll-right-focus.png</texture>
+			<visible>Container(9).HasNext</visible>
+		</control>
+
+
+		<control type="grouplist" id="400">
+			<description>control area</description>
+			<posx>40</posx>
+			<posy>120</posy>
+			<width>720</width>
+			<height>400</height>
+			<itemgap>5</itemgap>
+			<onup>9</onup>
+			<ondown>410</ondown>
+			<onleft>400</onleft>
+			<onright>400</onright>
+			<visible>StringCompare(Window.Property(Category),300)</visible>
+			<control type="label" id="401">
+				<height>35</height>
+				<width>720</width>
+				<font>font13_title</font>
+				<label>$ADDON[lyrics.xbmc.lyrics 30910]</label>
+				<textcolor>blue</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="edit" id="100">
+				<description>Name</description>
+				<height>40</height>
+				<width>720</width>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30911]</label>
+			</control>
+			<control type="edit" id="101">
+				<description>Username</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30912]</label>
+			</control>
+			<control type="edit" id="102">
+				<description>Email</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30913]</label>
+			</control>
+			<control type="edit" id="103">
+				<description>Date</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30914]</label>
+			</control>
+		</control>
+
+		
+		<control type="grouplist" id="410">
+			<description>control area</description>
+			<posx>40</posx>
+			<posy>120</posy>
+			<width>720</width>
+			<height>400</height>
+			<itemgap>5</itemgap>
+			<pagecontrol>4100</pagecontrol>
+			<onup>400</onup>
+			<ondown>420</ondown>
+			<onleft>410</onleft>
+			<onright>4100</onright>
+			<visible>StringCompare(Window.Property(Category),301)</visible>
+			<control type="label" id="411">
+				<description>General</description>
+				<height>35</height>
+				<width>720</width>
+				<font>font13_title</font>
+				<label>$ADDON[lyrics.xbmc.lyrics 30920]</label>
+				<textcolor>blue</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="edit" id="104">
+				<description>Title</description>
+				<height>40</height>
+				<width>720</width>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30921]</label>
+			</control>
+			<control type="edit" id="105">
+				<description>Base Address</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30922]</label>
+			</control>
+			<control type="spincontrolex" id="106">
+				<description>User-agent</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<texturenofocus border="5">button-nofocus.png</texturenofocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30923]</label>
+			</control>
+			<control type="edit" id="107">
+				<description>User-agent String</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<textoffsetx>20</textoffsetx>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<hinttext>[I]&lt;$ADDON[lyrics.xbmc.lyrics 30924]&gt;[/I]</hinttext>
+			</control>
+			<control type="label" id="412">
+				<height>35</height>
+				<width>720</width>
+				<font>font13_title</font>
+				<label>$ADDON[lyrics.xbmc.lyrics 30930]</label>
+				<textcolor>blue</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="spincontrolex" id="108">
+				<description>Case</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<texturenofocus border="5">button-nofocus.png</texturenofocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30931]</label>
+			</control>
+			<control type="edit" id="109">
+				<description>Join</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30932]</label>
+			</control>
+			<control type="edit" id="110">
+				<description>Space</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30933]</label>
+			</control>
+			<control type="edit" id="111">
+				<description>Escape</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30934]</label>
+			</control>
+			<control type="radiobutton" id="112">
+				<description>Clean</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30935]</label>
+			</control>
+			<control type="spincontrolex" id="113">
+				<description>Case</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<texturenofocus border="5">button-nofocus.png</texturenofocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30936]</label>
+			</control>
+			<control type="edit" id="114">
+				<description>Address</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30937]</label>
+			</control>
+			<control type="radiobutton" id="115">
+				<description>Clean</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30938]</label>
+			</control>
+			<control type="label" id="413">
+				<height>35</height>
+				<width>720</width>
+				<font>font13_title</font>
+				<label>$ADDON[lyrics.xbmc.lyrics 30940]</label>
+				<textcolor>blue</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="edit" id="116">
+				<description>Address</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30941]</label>
+			</control>
+			<control type="edit" id="117">
+				<description>Address</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30942]</label>
+			</control>
+			<control type="label" id="414">
+				<height>35</height>
+				<width>720</width>
+				<font>font13_title</font>
+				<label>$ADDON[lyrics.xbmc.lyrics 30950]</label>
+				<textcolor>blue</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="edit" id="118">
+				<description>Address</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30941]</label>
+			</control>
+			<control type="edit" id="119">
+				<description>Address</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30942]</label>
+			</control>
+		</control>
+		<control type="scrollbar" id="4100">
+			<posx>765</posx>
+			<posy>120</posy>
+			<width>25</width>
+			<height>400</height>
+			<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+			<texturesliderbar border="2,16,2,16">ScrollBarV_bar.png</texturesliderbar>
+			<texturesliderbarfocus border="2,16,2,16">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+			<textureslidernib>ScrollBarNib.png</textureslidernib>
+			<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+			<onleft>410</onleft>
+			<onright>9</onright>
+			<showonepage>false</showonepage>
+			<orientation>vertical</orientation>
+			<visible>StringCompare(Window.Property(Category),301)</visible>
+		</control>
+		
+		
+		<control type="grouplist" id="420">
+			<description>control area</description>
+			<posx>40</posx>
+			<posy>120</posy>
+			<width>720</width>
+			<height>400</height>
+			<itemgap>5</itemgap>
+			<pagecontrol>4200</pagecontrol>
+			<onup>410</onup>
+			<ondown>9001</ondown>
+			<onleft>420</onleft>
+			<onright>4200</onright>
+			<visible>StringCompare(Window.Property(Category),302)</visible>
+			<control type="label" id="421">
+				<height>35</height>
+				<width>720</width>
+				<font>font13_title</font>
+				<label>$ADDON[lyrics.xbmc.lyrics 30960]</label>
+				<textcolor>blue</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="spincontrolex" id="120">
+				<description>Address</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<texturenofocus border="5">button-nofocus.png</texturenofocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30961]</label>
+			</control>
+			<control type="spincontrolex" id="121">
+				<description>Address</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<texturenofocus border="5">button-nofocus.png</texturenofocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30962]</label>
+			</control>
+			<control type="label" id="422">
+				<height>35</height>
+				<width>720</width>
+				<font>font13_title</font>
+				<label>$ADDON[lyrics.xbmc.lyrics 30970]</label>
+				<textcolor>blue</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="radiobutton" id="122">
+				<description>LRC Lyrics</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<texturenofocus border="5">button-nofocus.png</texturenofocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30971]</label>
+			</control>
+			<control type="radiobutton" id="123">
+				<description>Address</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<texturenofocus border="5">button-nofocus.png</texturenofocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30972]</label>
+			</control>
+			<control type="edit" id="124">
+				<description>Address</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30973]</label>
+			</control>
+			<control type="spincontrolex" id="125">
+				<description>Address</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<texturenofocus border="5">button-nofocus.png</texturenofocus>
+				<label>- $ADDON[lyrics.xbmc.lyrics 30974]</label>
+			</control>
+			<control type="edit" id="126">
+				<description>Address</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30975]</label>
+			</control>
+			<control type="spincontrolex" id="127">
+				<description>Address</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<texturenofocus border="5">button-nofocus.png</texturenofocus>
+				<label>- $ADDON[lyrics.xbmc.lyrics 30974]</label>
+			</control>
+			<control type="label" id="423">
+				<height>35</height>
+				<width>720</width>
+				<font>font13_title</font>
+				<label>$ADDON[lyrics.xbmc.lyrics 30980]</label>
+				<textcolor>blue</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="spincontrolex" id="128">
+				<description>Address</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<texturenofocus border="5">button-nofocus.png</texturenofocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30981]</label>
+			</control>
+			<control type="radiobutton" id="129">
+				<description>Address</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30982]</label>
+			</control>
+			<control type="radiobutton" id="130">
+				<description>Address</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30983]</label>
+			</control>
+			<control type="edit" id="131">
+				<description>Address</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30973]</label>
+			</control>
+			<control type="spincontrolex" id="132">
+				<description>Address</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<texturenofocus border="5">button-nofocus.png</texturenofocus>
+				<label>- $ADDON[lyrics.xbmc.lyrics 30974]</label>
+			</control>
+			<control type="edit" id="133">
+				<description>Address</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<label>$ADDON[lyrics.xbmc.lyrics 30975]</label>
+			</control>
+			<control type="spincontrolex" id="134">
+				<description>Address</description>
+				<width>720</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<texturenofocus border="5">button-nofocus.png</texturenofocus>
+				<label>- $ADDON[lyrics.xbmc.lyrics 30974]</label>
+			</control>
+		</control>
+		<control type="scrollbar" id="4200">
+			<posx>765</posx>
+			<posy>120</posy>
+			<width>25</width>
+			<height>400</height>
+			<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+			<texturesliderbar border="2,16,2,16">ScrollBarV_bar.png</texturesliderbar>
+			<texturesliderbarfocus border="2,16,2,16">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+			<textureslidernib>ScrollBarNib.png</textureslidernib>
+			<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+			<onleft>420</onleft>
+			<onright>9</onright>
+			<showonepage>false</showonepage>
+			<orientation>vertical</orientation>
+			<visible>StringCompare(Window.Property(Category),302)</visible>
+		</control>
+
+		<control type="grouplist" id="9001">
+			<posy>535</posy>
+			<posx>30</posx>
+			<onup>420</onup>
+			<ondown>9</ondown>
+			<onleft>9001</onleft>
+			<onright>9001</onright>
+			<orientation>horizontal</orientation>
+			<itemgap>15</itemgap>
+			<control type="button" id="30010">
+				<description>Save Button</description>
+				<width>173</width>
+				<height>40</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font12_title</font>
+				<label>$ADDON[lyrics.xbmc.lyrics 30746]</label>
+			</control>
+			<control type="button" id="30011">
+				<description>Cancel Button</description>
+				<width>173</width>
+				<height>40</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font12_title</font>
+				<label>222</label>
+			</control>
+			<control type="button" id="30012">
+				<description>Reset Button</description>
+				<width>173</width>
+				<height>40</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font12_title</font>
+				<label>$ADDON[lyrics.xbmc.lyrics 30740]</label>
+			</control>
+			<control type="button" id="30013">
+				<description>Open Button</description>
+				<width>173</width>
+				<height>40</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font12_title</font>
+				<label>$ADDON[lyrics.xbmc.lyrics 30745]</label>
+			</control>
+		</control>
+
+	</controls>
+</window>
